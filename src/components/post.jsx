@@ -3,12 +3,15 @@ import { FaEdit, FaRegHeart, FaTrash, FaUser, FaEnvelope } from 'react-icons/fa'
 import { FiPhone } from 'react-icons/fi';
 import EditForm from './editForm';
 import { IoMdGlobe } from 'react-icons/io';
-import DataContext from '../context/DataContext';
 
-const Post = ({ post }) => {
+const Post = ({ post, data, setData }) => {
   const [isEditing, setEditing] = useState(false);
   const [isLiked, setLiked] = useState(false);
-  const { data, setData, deletePost } = useContext(DataContext);
+
+  const deletePost = (id) => {
+      const postList = data.filter(post => post.id !== id);
+      setData(postList);
+  }
 
   const handleLikePost = () => {
     setLiked((prevLiked) => !prevLiked);

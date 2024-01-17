@@ -1,13 +1,18 @@
 import Home from  './components/home';
-import { DataProvider } from './context/DataContext';
+import { useState, useEffect } from 'react';
+import jsonData from './data.json';
 
 function App() {
 
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    setData(jsonData);
+  }, []);
+
   return (
     <div>
-      <DataProvider>
-        <Home />
-      </DataProvider>
+        <Home data={data} setData={setData} />
     </div>
   )
 }

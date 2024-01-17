@@ -1,10 +1,6 @@
-import { useEffect, useState, useContext } from 'react';
-import api from '../api/post';
-import DataContext from '../context/DataContext';
+import React, { useEffect, useState } from 'react';
 
-const EditForm = ({ handleEditFormClose, post }) => {
-  const { data, setData } = useContext(DataContext);
-
+const EditForm = ({ handleEditFormClose, post, setData }) => {
   const [editName, setEditName] = useState('');
   const [editEmail, setEditEmail] = useState('');
   const [editNumber, setEditNumber] = useState('');
@@ -17,23 +13,22 @@ const EditForm = ({ handleEditFormClose, post }) => {
     setEditWebsite(post.website);
   }, [post]);
 
-  const handleUpdate = async (id) => {
+  const handleUpdate = (id) => {
     const updateDetails = { id, name: editName, email: editEmail, number: editNumber, website: editWebsite };
-    try {
-      const response = await api.put(`posts/${id}`, updateDetails);
-      setData((prevData) => prevData.map((prev) => (prev.id === id ? { ...response.data } : prev)));
 
-      setEditName('');
-      setEditEmail('');
-      setEditNumber('');
-      setEditWebsite('');
-    } catch (err) {
-      console.log(`Error: ${err.message}`);
-    }
+    // Replace the logic here with the correct way to update data based on your requirements
+    setData((prevData) =>
+      prevData.map((prev) => (prev.id === id ? { ...prev, ...updateDetails } : prev))
+    );
+
+    setEditName('');
+    setEditEmail('');
+    setEditNumber('');
+    setEditWebsite('');
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the default behavior for now, you can add custom validation logic here if needed
+    e.preventDefault();
     handleUpdate(post.id);
     handleEditFormClose();
   };
@@ -48,7 +43,7 @@ const EditForm = ({ handleEditFormClose, post }) => {
           </button>
         </div>
         <div className='sibling-1'>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className='input-class'>
               <label className='label' htmlFor='name'>
                 <sup style={{ color: 'red' }}>*</sup>Name:
@@ -57,8 +52,8 @@ const EditForm = ({ handleEditFormClose, post }) => {
                 className='inputBox'
                 type='text'
                 id='name'
-                value={editName}
                 required
+                value={editName}
                 onChange={(e) => setEditName(e.target.value)}
               />
             </div>
@@ -106,7 +101,7 @@ const EditForm = ({ handleEditFormClose, post }) => {
               <button className='clear-button' onClick={handleEditFormClose}>
                 Cancel
               </button>
-              <button type='submit' className='okButton clear-button' onClick={handleSubmit}>
+              <button type='submit' className='okButton clear-button'>
                 OK
               </button>
             </div>

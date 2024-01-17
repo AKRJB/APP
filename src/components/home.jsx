@@ -1,21 +1,32 @@
-import Feed from './Feed'
-import { useContext } from 'react'
-import DataContext from '../context/DataContext'
+import React, { useEffect, useState } from 'react';
+import Feed from './Feed';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
+const Home = ({ data, setData }) => {
+  const [loading, setLoading] = useState(true);
 
-const Home = () => {
-  const { data, fetchError, isLoading } = useContext(DataContext);
+  useEffect(() => {
+
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(delay);
+  }, [])
+
   return (
     <main>
-      {isLoading && <p>Loading data....</p>}
-      {!isLoading && fetchError && <p style={{ color: "red" }}>{fetchError}</p>}
-      {!isLoading && !fetchError && (data.length ? (
-        <Feed />
+      {loading ? (
+        <div className="loading-spinner">
+          <FontAwesomeIcon icon={faSpinner} spin />
+        </div>
       ) : (
-        <p style={{ marginTop: "2rem" }}>No posts to display</p>
-      ))}
-    </main>
-  )
-}
 
-export default Home
+        <Feed data={data} setData={setData} />
+      )}
+    </main>
+  );
+};
+
+export default Home;
