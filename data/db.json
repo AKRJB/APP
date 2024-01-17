@@ -1,0 +1,123 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "name": "Alakh Kaler",
+      "email": "alakhkaler@gmail.com",
+      "number": "8989708516",
+      "website": "www.air.com"
+    },
+    {
+      "id": "2",
+      "name": "Kuldeep",
+      "email": "kuldeep@gmail.com",
+      "number": "8989708516",
+      "website": "www.tesla.com"
+    },
+    {
+      "id": "4",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "5",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "6",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "7",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "8",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "9",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "10",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "11",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "12",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "13",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "14",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "15",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "16",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "18",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    },
+    {
+      "id": "19",
+      "name": "Harsh",
+      "email": "Harsh@gmail.com",
+      "number": "8989708516",
+      "website": "www.apple.com"
+    }
+  ]
+}
